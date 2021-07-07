@@ -1,0 +1,11 @@
+#FROM php:7.4-apache
+#FROM php:7.4-cli
+
+#ADD ./sentimentAnalyzerAzure2.php /home
+#CMD [ "php", "/home/sentimentAnalyzerAzure2.php" ]
+
+FROM php:7.0-apache    
+COPY . /var/www/php
+FROM php:7.4-cli
+ADD ./sentimentAnalyzerAzure2.php /home
+CMD [ "php", "/home/sentimentAnalyzerAzure2.php" ]
